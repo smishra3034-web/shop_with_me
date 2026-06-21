@@ -1,0 +1,9 @@
+# Dependency directories
+node_modules/
+
+# Local database file
+orders.json
+
+# Operating System files
+.DS_Store
+Thumbs.db
