@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="PinkPetal Gifts - A premium baby pink and white themed boutique for gorgeous gifts categorized by occasion and type.">
+  <title>PinkPetal Gifts | Exquisite Gifting Shop</title>
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+  <!-- FontAwesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- Navigation Bar -->
+  <header class="navbar">
+    <div class="nav-container">
+      <a href="#" class="logo" id="navLogo">
+        <i class="fa-solid fa-gift logo-icon"></i>
+        <span>PinkPetal</span>
+      </a>
+
+      <!-- Search and Filters bar -->
+      <div class="search-bar-container">
+        <i class="fa-solid fa-magnifying-glass search-icon"></i>
+        <input type="text" id="searchInput" placeholder="Search for roses, necklaces, candles...">
+      </div>
+
+      <div class="nav-actions">
+        <button id="ordersBtn" class="nav-btn secondary-btn" title="View Orders">
+          <i class="fa-solid fa-receipt"></i>
+          <span class="btn-text">Orders</span>
+        </button>
+        <button id="cartBtn" class="nav-btn primary-btn" title="View Cart">
+          <i class="fa-solid fa-shopping-bag"></i>
+          <span class="cart-count" id="cartCount">0</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="hero-content">
+      <span class="hero-tag">Curated with love</span>
+      <h1>Perfect Gifts for Every Precious Moment</h1>
+      <p>Discover our boutique collection of hand-picked flowers, jewelry, and personalized keepsakes styled in soft tones of rose and white.</p>
+      <div class="hero-buttons">
+        <a href="#products-section" class="cta-btn primary-cta">Browse Gifts</a>
+        <a href="#occasions-section" class="cta-btn secondary-cta">Shop by Occasion</a>
+      </div>
+    </div>
+    <div class="hero-decoration-left"></div>
+    <div class="hero-decoration-right"></div>
+  </section>
+
+  <!-- Occasions Section -->
+  <section id="occasions-section" class="section-container">
+    <div class="section-header">
+      <h2>Shop by Occasion</h2>
+      <p>Find the perfect gesture tailored to the celebration</p>
+    </div>
+    <div class="occasions-grid">
+      <div class="occasion-card" data-occasion="all">
+        <div class="occasion-icon-bg"><i class="fa-solid fa-border-all"></i></div>
+        <h3>All Celebrations</h3>
+      </div>
+      <div class="occasion-card" data-occasion="Birthday">
+        <div class="occasion-icon-bg"><i class="fa-solid fa-cake-candles"></i></div>
+        <h3>Birthdays</h3>
+      </div>
+      <div class="occasion-card" data-occasion="Anniversary">
+        <div class="occasion-icon-bg"><i class="fa-solid fa-ring"></i></div>
+        <h3>Anniversaries</h3>
+      </div>
+      <div class="occasion-card" data-occasion="Valentine's Day">
+        <div class="occasion-icon-bg"><i class="fa-solid fa-heart"></i></div>
+        <h3>Valentine's Day</h3>
+      </div>
+      <div class="occasion-card" data-occasion="Housewarming">
+        <div class="occasion-icon-bg"><i class="fa-solid fa-house-chimney-user"></i></div>
+        <h3>Housewarming</h3>
+      </div>
+      <div class="occasion-card" data-occasion="Thank You">
+        <div class="occasion-icon-bg"><i class="fa-solid fa-hands-clapping"></i></div>
+        <h3>Thank You</h3>
+      </div>
+    </div>
+  </section>
+
+  <!-- Products Section -->
+  <section id="products-section" class="section-container">
+    <div class="section-header">
+      <h2>Our Collections</h2>
+      <p>Explore exquisite gift selections curated by category</p>
+    </div>
+
+    <!-- Category Tabs -->
+    <div class="category-tabs">
+      <button class="tab-btn active" data-category="all">All Items</button>
+      <button class="tab-btn" data-category="Flowers">Flowers</button>
+      <button class="tab-btn" data-category="Jewelry">Jewelry</button>
+      <button class="tab-btn" data-category="Chocolates">Chocolates</button>
+      <button class="tab-btn" data-category="Home Decor">Home Decor</button>
+      <button class="tab-btn" data-category="Personalized">Personalized</button>
+    </div>
+
+    <!-- Active filters bar -->
+    <div id="activeFilters" class="active-filters-bar" style="display: none;">
+      <span class="filter-label">Active Filters:</span>
+      <span id="filterOccasionTag" class="filter-tag" style="display: none;">
+        Occasion: <strong id="occasionValue">None</strong>
+        <i class="fa-solid fa-xmark close-tag" id="clearOccasionFilter"></i>
+      </span>
+      <span id="filterSearchTag" class="filter-tag" style="display: none;">
+        Search: <strong id="searchValue">None</strong>
+        <i class="fa-solid fa-xmark close-tag" id="clearSearchFilter"></i>
+      </span>
+    </div>
+
+    <!-- Products Grid -->
+    <div class="products-grid" id="productsGrid">
+      <!-- Injected by JavaScript -->
+      <div class="loading-state">
+        <i class="fa-solid fa-spinner fa-spin loading-spinner"></i>
+        <p>Loading beautiful gifts...</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-content">
+      <div class="footer-brand">
+        <a href="#" class="logo">
+          <i class="fa-solid fa-gift logo-icon"></i>
+          <span>PinkPetal</span>
+        </a>
+        <p>Bringing elegance and smiles to your special moments. Crafted in baby pink and white.</p>
+      </div>
+      <div class="footer-links">
+        <h3>Customer Care</h3>
+        <ul>
+          <li><a href="#">Contact Us</a></li>
+          <li><a href="#">Shipping & Returns</a></li>
+          <li><a href="#">FAQs</a></li>
+        </ul>
+      </div>
+      <div class="footer-links">
+        <h3>Connect With Us</h3>
+        <div class="social-icons">
+          <a href="#"><i class="fa-brands fa-instagram"></i></a>
+          <a href="#"><i class="fa-brands fa-pinterest"></i></a>
+          <a href="#"><i class="fa-brands fa-facebook"></i></a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 PinkPetal Gifts Boutique. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- CART DRAWER -->
+  <div id="cartDrawer" class="drawer-overlay">
+    <div class="drawer">
+      <div class="drawer-header">
+        <h2>Your Shopping Bag</h2>
+        <button id="closeCartBtn" class="close-btn"><i class="fa-solid fa-xmark"></i></button>
+      </div>
+      <div class="drawer-content" id="cartContent">
+        <!-- Injected by JS -->
+      </div>
+      <div class="drawer-footer">
+        <div class="total-row">
+          <span>Subtotal</span>
+          <span class="total-price" id="cartSubtotal">$0.00</span>
+        </div>
+        <button id="checkoutBtn" class="checkout-btn" disabled>Proceed to Checkout</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- CHECKOUT MODAL -->
+  <div id="checkoutModal" class="modal-overlay">
+    <div class="modal">
+      <div class="modal-header">
+        <h2>Checkout Details</h2>
+        <button id="closeCheckoutBtn" class="close-btn"><i class="fa-solid fa-xmark"></i></button>
+      </div>
+      <form id="checkoutForm" class="modal-content">
+        <div class="form-group">
+          <label for="custName">Full Name</label>
+          <input type="text" id="custName" required placeholder="Saraswati Devi">
+        </div>
+        <div class="form-group">
+          <label for="custEmail">Email Address</label>
+          <input type="email" id="custEmail" required placeholder="saraswati@example.com">
+        </div>
+        <div class="form-group">
+          <label for="custAddress">Delivery Address</label>
+          <textarea id="custAddress" rows="3" required placeholder="123 Blossom Street, Garden District"></textarea>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="custCity">City</label>
+            <input type="text" id="custCity" required placeholder="Kolkata">
+          </div>
+          <div class="form-group">
+            <label for="custZip">ZIP Code</label>
+            <input type="text" id="custZip" required placeholder="700001">
+          </div>
+        </div>
+        <div class="order-summary-box">
+          <h3>Order Summary</h3>
+          <div id="checkoutSummaryItems"></div>
+          <div class="summary-total-row">
+            <span>Total to Pay</span>
+            <span id="checkoutTotalAmount">$0.00</span>
+          </div>
+        </div>
+        <button type="submit" class="submit-order-btn">Place Order & Pay</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- ORDER SUCCESS MODAL -->
+  <div id="successModal" class="modal-overlay">
+    <div class="modal success-modal">
+      <div class="success-icon-container">
+        <i class="fa-solid fa-circle-check"></i>
+      </div>
+      <h2>Order Placed!</h2>
+      <p>Thank you for shopping with PinkPetal Gifts. Your order has been saved successfully.</p>
+      <div class="success-details">
+        <p>Order ID: <strong id="successOrderId">#XXXXX</strong></p>
+        <p>A confirmation email has been sent to your address.</p>
+      </div>
+      <button id="successCloseBtn" class="cta-btn primary-cta">Continue Shopping</button>
+    </div>
+  </div>
+
+  <!-- PRODUCT DETAIL MODAL -->
+  <div id="productModal" class="modal-overlay">
+    <div class="modal product-detail-modal">
+      <button id="closeProductModalBtn" class="close-btn"><i class="fa-solid fa-xmark"></i></button>
+      <div class="product-detail-layout" id="productDetailContent">
+        <!-- Injected by JS -->
+      </div>
+    </div>
+  </div>
+
+  <!-- ORDERS PANEL MODAL -->
+  <div id="ordersModal" class="modal-overlay">
+    <div class="modal orders-list-modal">
+      <div class="modal-header">
+        <h2>Order History (Database)</h2>
+        <button id="closeOrdersBtn" class="close-btn"><i class="fa-solid fa-xmark"></i></button>
+      </div>
+      <div class="modal-content orders-modal-content" id="ordersListContent">
+        <!-- Injected by JS -->
+      </div>
+    </div>
+  </div>
+
+  <!-- Custom JavaScript -->
+  <script src="app.js"></script>
+</body>
+</html>
