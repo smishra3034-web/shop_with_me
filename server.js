@@ -18,7 +18,7 @@ const products = [
     price: 29.99,
     category: "Flowers",
     occasions: ["Valentine's Day", "Anniversary"],
-    image: "assets/pink_roses.png",
+    image: "pink_roses.png",
     rating: 4.8,
     description: "A gorgeous arrangement of hand-picked fresh pink roses, wrapped in premium paper and tied with a satin ribbon."
   },
@@ -28,7 +28,7 @@ const products = [
     price: 49.99,
     category: "Jewelry",
     occasions: ["Anniversary", "Birthday"],
-    image: "assets/necklace.png",
+    image: "necklace.png",
     rating: 4.9,
     description: "A sterling silver necklace featuring a delicate double-heart pendant encrusted with shimmering cubic zirconia."
   },
@@ -38,7 +38,7 @@ const products = [
     price: 19.99,
     category: "Chocolates",
     occasions: ["Birthday", "Thank You"],
-    image: "assets/chocolates.png",
+    image: "chocolates.png",
     rating: 4.7,
     description: "An assortment of premium strawberry truffles and milk chocolates, beautifully boxed in a rose-patterned gift case."
   },
@@ -48,7 +48,7 @@ const products = [
     price: 14.99,
     category: "Home Decor",
     occasions: ["Housewarming", "Thank You"],
-    image: "assets/candle.png",
+    image: "candle.png",
     rating: 4.6,
     description: "A hand-poured soy candle infusing any space with the gentle, calming aroma of blooming roses and vanilla."
   },
@@ -58,7 +58,7 @@ const products = [
     price: 24.99,
     category: "Personalized",
     occasions: ["Birthday", "Anniversary"],
-    image: "assets/custom_mug.png",
+    image: "custom_mug.png",
     rating: 4.5,
     description: "A high-quality ceramic mug in a pastel pink finish, customized with elegant cursive text for your special someone."
   },
@@ -68,7 +68,7 @@ const products = [
     price: 79.99,
     category: "Jewelry",
     occasions: ["Anniversary", "Birthday"],
-    image: "assets/watch.png",
+    image: "watch.png",
     rating: 4.9,
     description: "A sleek, minimalist wristwatch with a rose gold mesh strap, white marble dial, and quartz movement."
   }
